@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let user={
+            name:"uttu",
+            course:"b.tech",
+            roll:59,
+            city:"gkp",
+            height:5.3,
+            weight:45,
+            isHavingGF: false,
+            gender:"female",
+            age:21
+        };
+        let keys=Object.keys(user);
+        console.log(keys);
+        let values=Object.values(user);
+        console.log(values);
+        let enteries=Object.entries(user);
+        console.log(enteries);
+        // if u want to serach for any in the object attributes
+        console.log(keys.includes("name"));
+        console.log("property h yaa nhi  "+ user.hasOwnProperty("name"));
+
+        //to print all the keys
+        Object.keys(user).forEach(element =>{
+            console.log(element)
+        });
+
+        //to print all the values
+        Object.values(user).forEach(element =>{
+            console.log(element)
+        });
+
+        //to prin tall the key:value pairs
+        Object.entries(user).forEach(element =>{
+            console.log(element)
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let user ={
+            name:"aditi",
+            roll:4,
+            address:{
+                city:"gkp",
+                pincode:223344,
+                state:"up",
+
+            },
+            course:"b.tech",
+            semester:7,
+
+        }
+        console.log(user);
+        console.log(user.address.pincode);
+        console.log(user.address.state);
+        let c= user.address;
+        console.log(c.state);
+
+        //it is pasing the reference 
+        let user1= user;
+        user1.name="uttu";
+        console.log(user1);
+        console.log(user);
+
+
+        //shallow copy 
+        let user2= {
+            ...user
+        };//problem in shallow copy is that the inner object or array will pass only refrence
+
+
+        //deep copy 
+        let tmp= JSON.stringify(user);
+        console.log(tmp);
+
+        let user3= JSON.parse(tmp)
+        console.log(user3);
+         user.name= "adya";
+        user.address.city="agra";
+        console.log(user);
+        console.log(user3);
+
+
+
+
+        let user4= structuredClone(user);//shoetcut for json
+        user.name= "adadya";
+        user.address.city="agra";
+        console.log(user);
+        console.log(user4);
+
+        //alias destructing
+        const{name:fullName}= user;
+
+        //default value destrcution
+        const {attend = false}= user;
+
+
+        //mergingthe objects 
+        let fees={
+            name:"manjesh",
+            total:3000,
+            dues:2500
+
+        }
+
+        let student={
+            ...fees,
+            ...user
+        }
+        console.log(student);
+
+        //safe access of objects
+        console.log(user?.temporaray?.city);//iska us krke error nhi aata h
+        //undefined batayega 
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
